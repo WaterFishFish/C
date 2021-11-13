@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+    int a,bi,s,g;
+    printf("Please enter a positive integer: ");
+    scanf("%d", &a);
+    bi = a / 100;
+    s = a / 10 - bi*10;
+    g = a % 10;
+     printf("%d-->%d\n",a,bi+s*10+g*100);
+    return 0;
+}
