@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+//利用递归求n的阶乘
+int Fac2(int n) {
+if(n<=1)
+return 1;
+else
+return n*Fac2(n-1);
+	
+  
+}
+main()
+{
+	int n = 0;
+	int ret = 0;
+	scanf("%d", &n);
+	ret = Fac2(n);
+	printf("%d\n", ret);
+}
