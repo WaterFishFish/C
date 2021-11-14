@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+	char arr[] = "abcd";
+	printf("%d\n", sizeof(arr));
+	//sizeof 计算arr所占空间的大小
+
+	printf("%d\n", strlen(arr));
+	//strlen 求字符串的长度-'\0'之前的字符个数
+	//[a b c d \0]
+}
