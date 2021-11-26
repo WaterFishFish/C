@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int row;//打印的行数
+	int i, j, m;
+	printf("请输入打印的行数：");
+	scanf("%d", &row);
+	for (i = 1; i <= row; i++)
+	{
+		for (m = 1; m <= row - i + 1; m++)
+		{
+			printf(" ");
+		}
+		for (j = 1; j <= 6; j++)
+		{
+			if (j == 6)
+			{
+				printf("*\n");
+				break;
+			}
+			printf("*");
+		}
+	}
+	return 0;
+}
