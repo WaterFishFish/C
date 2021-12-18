@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int MinCommonMultiple(int a ,int b )
+{
+	
+	int i;
+	if (a > b) {
+		i = a;
+	}
+	else {
+		i = b;
+	}
+	while (i % a != 0 || i % b!= 0) {
+		i++;
+	}
+	return i;
+
+}
+int main(void)
+{
+	int a, b, k;
+	
+	printf("Input a,b:");
+	scanf("%d,%d", &a, &b);
+	k = MinCommonMultiple(a,b);
+	printf("MinCommonMultiple = %d\n", k);
+
+}
