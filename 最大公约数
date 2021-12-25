@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int gcd(int a, int b)
+{
+	while (a != b) {
+		if (a > b)
+			a = a - b;
+		if (a < b)
+			b = b - a;
+	}
+	return a;
+}
+int main() {
+	int a, b;
+	printf("input two positive numbers\n");
+	scanf("%d,%d", &a, &b);
+	int ret = gcd(a, b);
+	printf("最大公约数是:%d\n", ret);
+}
