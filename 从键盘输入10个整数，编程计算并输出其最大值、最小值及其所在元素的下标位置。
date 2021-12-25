@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int a[10], n, max, min, maxpos, minpos;
+	for (n = 0; n <= 9; n++)
+	{
+		scanf("%d", &a[n]);
+	}
+	max = min = a[0];
+	maxpos = minpos = 0;
+	for (n = 0; n <= 9; n++)
+	{
+		if (a[n] > max)
+		{
+			max = a[n];
+			maxpos = n;
+		}
+		else if (a[n] < min)
+		{
+			min = a[n];
+			minpos = n;
+		}
+	}
+	printf("max=%d, pos=%d\n", max, maxpos);
+	printf("min=%d, pos=%d\n", min, minpos);
+	return 0;
+}
