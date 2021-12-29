@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void ReverseOrder(int a[], int n);
+int main()
+{
+    int i, a[10];
+    printf("input 10 numbers:");
+    for (i = 0; i < 10; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    ReverseOrder(a, 10);
+    for (i = 0; i < 10; i++)
+    {
+        printf("%5d", a[i]);
+    }
+}
+void ReverseOrder(int a[], int n)
+{
+    int i, j, temp;
+    for (i = 0, j = n - 1; i < j; i++, j--) //逆序的操作
+    {
+        temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+}
