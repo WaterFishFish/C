@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+void xx(int n) {
+	int i;
+	for (i = 1; i <= n; i++)
+		printf("*");//打印“*”
+}
+int main()
+{
+	int arr[100] = { 0 };
+	int i,n;
+	printf("Input the feedbacks of 40 students:\n");
+	for (i =0; i <40; i++) {
+		scanf("%d", &n);//打分存储
+		arr[n]++;//这里是一个数，打了几分就给对应那个数加1
+	}
+	printf("Feedback\tCount\tHistogram\n");
+	for (i = 1; i <=10; i++) {
+		printf("%8d\t%5d\t",i,arr[i]);
+		xx(arr[i]);
+		printf("\n");//打印信息
+	}
+}
