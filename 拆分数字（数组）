@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+    char arr[30];
+    int i, l;
+    printf("请输入一整型数字：");
+    gets(arr);
+    printf("数字拆分如下：\n");
+    l = strlen(arr);
+    for (i = 0; i < l; i++)
+   printf("%d ", arr[i] - '0');//将数字字符转为数字值
+    printf("\n");
+}
