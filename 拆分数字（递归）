@@ -15,3 +15,5 @@
 		scanf("%d", &num);
 		print(num);
 	}
+	
+
