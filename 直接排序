@@ -27,6 +27,7 @@ int main()
  		printf("%4d", arr[i]);
 	printf("\n");
     InsertSort(arr, x);
+    printf("插入后数组的数据是:");
 	for (i = 0; i < 10; i++)
 		printf("%4d", arr[i]);
 }
