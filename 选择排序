@@ -1,0 +1,36 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void selectesort(int*arr, int len) 
+{
+	int i = 0;         //定义一个i并且赋初值为0，i作为数组的下标
+	int j = 0;      //定义j并且赋初值为0，j作为找到最大值时所对应的下标
+	int k; //定义一个k，用来保存此次循环中最大值的下标
+	int temp;         //定义一个中间变量temp，供以后交换值的时候使用
+	for (i = 0; i < len; i++)        //判断i是否小于len，执行下面的语句
+	{
+		k = i;           //假设此次循环中的最小值就是当前的值
+		for (j = i + 1; j < len; j++)
+		{
+			if (arr[j] < arr[k])    //将假设的当前最小值与后面的值比较
+			{
+				k = j;     //若后面的值更小，则交换下标
+			}
+		}
+		if (k != i)       //比较之后如果此次循环中最小值并非当前值
+		{
+			temp = arr[i];   //将此次循环中的最小值与a[k]交换
+			arr[i] = arr[k];
+			arr[k] = temp;
+		}
+	}
+}
+int main()
+{
+	int arr[]={4,5,6,72,1,7,9,3,};    //定义了一个9个数的数组，并且初始化
+	int i;
+	int len = sizeof(arr) / sizeof(arr[0]);
+	selectesort(arr, len);
+	for(i=0;i<len;i++)       //利用for循环将结果依次输出
+		printf("%d ",arr[i]);
+	return 0;
+}
