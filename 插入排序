@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void insertsort(int arr[], int  x) 
+{
+	int i, j;
+	for ( i= 0; i < 10; i++)
+		if (x < arr[i])
+			break;
+	for ( j = 9; j >= i; j--)
+		arr[j + 1] = arr[j];
+	arr[i] = x;
+}
+int main()
+{
+	int i, x;
+	int arr[11] = { 3, 6, 7, 9, 12, 14, 15, 27, 29, 31 };
+	printf("插入前数组的数据是:");
+	for (i = 0; i < 10; i++)
+		printf("%4d", arr[i]);
+	printf("\n");
+	printf("请输入要插入的数据:");
+	scanf("%d", &x);
+	insertsort(arr, x);
+		printf("插入后数组的数据是:");
+		for (i = 0; i < 11; i++)
+		printf("%4d", arr[i]);
+}
