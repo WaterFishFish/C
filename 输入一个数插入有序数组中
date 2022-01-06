@@ -5,9 +5,9 @@ void insertsort(int arr[], int  x)
 	int i, j;
 	for ( i= 0; i < 10; i++)
 		if (x < arr[i])
-			break;
+			break;//找到插入的位置
 	for ( j = 9; j >= i; j--)
-		arr[j + 1] = arr[j];
+		arr[j + 1] = arr[j];//前面的数往后移
 	arr[i] = x;
 }
 int main()
