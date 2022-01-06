@@ -14,7 +14,7 @@ void InsertSort(int* arr, int x)
 
             j--;
         }
-        arr[++j] = temp;//插入数据 （注意这里只能++j，先赋值再执行语句，否则会栈溢出
+        arr[++j] = temp;//插入数据 （注意这里只能++j，先赋值再执行语句，否则会栈溢出）
     }
 }
 int main()
