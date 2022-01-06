@@ -1,0 +1,33 @@
+//输入某班学生某门课的成绩（最多不超过40人），
+//当输入为负值时，表示输入结束，
+//用函数编程统计成绩不低于平均分的学生人数。
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<math.h>
+int GetAboveAver(int score[], int n) {
+	int sum = 0;
+	int aver = 0;
+	int ret=0;
+	for (int i = 0; i < n; i++)
+		sum = sum + score[i];
+	aver = sum / n;
+	for (int i = 0; i < n; i++) {
+		if (score[i] >=aver)
+			ret++;
+	}
+	return ret;
+}
+int main() {
+	int score[40];
+	int ret = 0;
+	int n= 0;
+	for (int i = 0; i < 40; i++) {
+scanf("%d", &score[i]);
+if (score[i] >=0)
+			n++;
+		else
+			break;
+	}	
+	ret = GetAboveAver(score, n);
+	printf("Students of above average is %d\n", ret);
+}
