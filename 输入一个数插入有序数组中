@@ -7,7 +7,7 @@ void insertsort(int arr[], int  x)
 		if (x < arr[i])
 			break;//找到插入的位置
 	for ( j = 9; j >= i; j--)
-		arr[j + 1] = arr[j];//前面的数往后移
+		arr[j + 1] = arr[j];//后面的数往后移
 	arr[i] = x;
 }
 int main()
