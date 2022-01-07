@@ -1,26 +1,29 @@
-#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<math.h>
-int main() {
-    int i;
-    int arr[5];
-    for (i = 1; i <= 5; i++)
-    {
-        printf("Enter No.%2d:", i);
-        scanf("%d", &arr[i-1]);
-    }
-    for (int k = 0; k < 5; k++) {
-  for (int j = 0; j < 5 -k-1; j++) {
+void BubbleSort(int*arr, int i) {
+    for (int k = 0; k < i; k++) {
+        for (int j = 0; j < i - k - 1; j++) {
             if (arr[j] > arr[j + 1]) {
                 int temp;
                 temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
-
             }
         }
-     }
-    for (int a = 0; a < 5; a++) {
-        printf("%d", arr[a]);
+    }
+}
+int main() {
+    int i;
+    int arr[100];
+    printf("Input n:");
+    scanf("%d",&i);
+    printf("Input %d numbers:", i);
+    for(int m=1;m<=i;m++)
+        scanf("%d", &arr[m - 1]);
+    BubbleSort(arr, i);
+    printf("Sorting results:");
+    for (int a = 0; a < i; a++) {
+        printf("%4d", arr[a]);
     }
 }
