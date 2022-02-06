@@ -1,0 +1,34 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int Binary_Search(int arr[], int len, int key)                          //折半查找法（二分法）
+{
+	int low = 0;                         //定义初始最小
+	int high = len - 1;                 //定义初始最大
+	int mid;                            //定义中间值
+	while (low <= high)
+	{
+		mid = (low + high) / 2;              //找中间值
+		if (key == arr[mid])               //判断min与key是否相等
+			return mid;
+		else if (key > arr[mid])             //如果key>mid  则新区间为[mid+1,high]
+			low = mid + 1;
+		else                                       //如果key<mid  则新区间为[low,mid-1]
+			high = mid - 1;
+	}
+	return -1;                             //如果数组中无目标值key，则返回 -1 ；
+}
+int main()
+{
+	int i;
+	int result = 0;
+	printf("input a number you want to find:\n");
+	scanf("%d", &i);
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10,11 };    //首先要对数组arr进行排序
+	int len = (sizeof(arr) / sizeof(arr[0]));
+	result = BinSearch(arr, len, i);
+	if (result ==-1)
+	printf("not find!");
+	else 
+	printf("the index is=% d \n", result);
+	return 0;
+}
