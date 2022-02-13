@@ -6,7 +6,7 @@
 	char ch1; char ch2;
 	ch1 = getchar();//1
 	ch2 = getchar();//2
-	n1 = ch1 - '0';//算的是Ascii码值
+	n1 = ch1 - '0';
 	n2 = n1 * 10 + (ch2 - '0');
 	printf("%d", n2);
   //结果为12
