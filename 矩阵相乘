@@ -1,0 +1,46 @@
+#define _CRT_SECURE_NO_WARNINGS 1	
+#include <stdio.h>
+#define M 3
+#define S 4
+#define N 2
+
+void multiply(int A[M][S], int B[S][N], int C[M][N])
+{
+    int i, j,k;
+    for (i = 0; i <M; i++)//用于控制C和A的行标
+    {
+        for (j = 0; j < N; j++) //用于控制C和B的列标
+        {
+            for (k = 0; k < S; k++) 
+            {
+                //用于控制A的列标和B的行标
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+
+}
+int main()
+{
+    int i, j;
+    int A[M][S], B[S][N], C[M][N] = { 0 };//必须对C数组进行初始化;
+    printf("Please input A:\n");
+    for (i = 0; i < M; i++)
+        for (j = 0; j < S; j++)
+            scanf("%d", &A[i][j]);
+    printf("Please input B:\n");
+    for (i = 0; i < S; i++)
+        for (j = 0; j < N; j++)
+            scanf("%d", &B[i][j]);
+    multiply(A, B, C);
+    printf("C=\n");
+    for (i = 0; i < M; i++) {
+        for (j = 0; j < N; j++)
+            printf("%d ", C[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
+
+
+	
