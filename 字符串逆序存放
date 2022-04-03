@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS 1	
+#include <stdio.h>
+#include<string.h>
+void inverse(char *str1,char *str2)
+{
+    int  i;
+	for (i = 0;  str1[i] != '\0'; i++)
+	{
+		str2[i] = str1[strlen(str1) - i-1];
+	}
+	str2[i] = 0;
+}
+
+int main()
+{
+	char str1[10];
+	char str2[10] ;
+	printf("Input a string:");
+	gets(str1);
+	inverse(str1, str2);
+	printf("Inversed results:%s\n", str2);
+}
+
+
