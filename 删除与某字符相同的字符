@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS 1	
+#include <stdio.h>
+#include<string.h>
+void DeleteCharacter(char str[], char c)
+{
+    int  i, j = 0;
+    char str3[100];
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] == c)
+        {
+            continue;
+        }
+        str3[j] = str[i];
+        j++;
+    }
+    for (i = 0; i < j; i++)
+    {
+        str[i] = str3[i];
+    }
+    str[i] = '\0';
+}
+
+int main()
+{
+	int ret = 0;
+	char str1[100];
+	char str2;
+	
+	printf("Input a string:");
+	gets(str1);
+	printf("Input a character:");
+    str2=getchar();
+    DeleteCharacter(str1, str2);
+	printf("Results:%s\n", str1);
+}
+
+
