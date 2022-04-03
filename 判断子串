@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define N 100
+int CmpString(char a[],char b[]);
+int main()
+{
+    char str1[N],str2[N];
+    int x;
+    printf("Please input the first str:");
+    scanf("%s",str1);
+    printf("Please input the second str:");
+    scanf("%s",str2);
+    x=CmpString(str1,str2);
+    if(x==1)
+        printf("YES\n");
+    else
+        printf("NO\n");
+    return 0;
+}
+int CmpString(char a[],char b[])
+{
+    int len1,len2;
+    int i=0,j=0;
+    len1=strlen(a);
+    len2=strlen(b);
+    if(len1<len2)
+        return -1;
+    while(i<len1&&j<len2)
+    {
+        if(a[i]==b[j])
+        {
+            i++;
+            j++;
+        }
+        else
+        {
+            i=i-j+1;
+            j=0;
+        }
+    }
+    if(j==len2)
+        return 1;
+    else
+        return -1;
+}
