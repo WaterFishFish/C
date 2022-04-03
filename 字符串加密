@@ -1,0 +1,59 @@
+#define _CRT_SECURE_NO_WARNINGS 1	
+#include <stdio.h>
+#include<string.h>
+char CharEncoding(char ch)
+{
+	char encode = 0;
+	if (ch >= 'A' && ch <= 'Z')
+	{
+		encode = ('A' + 'Z') - ch;
+	}
+	else if (ch >= 'a' && ch <= 'z')
+	{
+		encode = 'a' + 'z' - ch;
+	}
+	else
+	{
+		switch (ch)
+		{
+		case ' ': encode = '@';
+			break;
+		case '.': encode = '#';
+			break;
+		default: encode = '.';
+			break;
+		}
+	}
+	return encode;
+}
+
+
+void SentenceEncoding(char* soure, char* code)
+{
+	int i = 0;
+	for (i = 0; soure[i] != '\0'; i++) {
+		if (soure[i] > 'A' && soure[i] < 'Z') {
+			code[i] = 155 - soure[i];
+		}
+		else if (soure[i] > 'a' && soure[i] < 'z')
+			code[i] = 219 - soure[i];
+		else
+			code[i] = CharEncoding(soure[i]);
+	}
+	code[i] = '\0';
+}
+int main()
+{
+	int ret = 0;
+	char soure[100];
+	char code[100];
+	
+	printf("Input source sentence:");
+	gets(soure);
+	printf("Encoded sentence:");
+    SentenceEncoding(soure, code);
+		puts (code);
+		
+}
+
+
