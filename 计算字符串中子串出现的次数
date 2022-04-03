@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS 1	
+#include <stdio.h>
+#include<string.h>
+int FindString(char *str,char *sub)
+{
+    int count = 0;
+    int  i, j = 0;
+    char str3[100];
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] == sub)
+        {
+            count++;
+        }
+        str3[j] = str[i];
+        j++;
+    }
+    return count;
+}
+
+int main()
+{
+	char str1[100];
+	char str2;
+	gets(str1);
+    str2=getchar();
+	printf("%d\n", FindString(str1, str2));
+}
+
+
