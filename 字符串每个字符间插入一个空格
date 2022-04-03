@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS 1	
+#include <stdio.h>
+#include<string.h>
+void insertstring(char* str)
+{
+
+	for ( int i = strlen(str); i>=1; i--)
+	{
+		str[2 * i] = str[i];
+		str[2 * i - 1] = 32;
+	}
+}
+int main()
+{
+	char str[100];
+	printf("Input a string:");
+	scanf("%s", str);
+	insertstring(str);
+	puts(str);
+}
+
+
